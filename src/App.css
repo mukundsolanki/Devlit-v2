@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+body {
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .landing-page{
+  height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.landing-page h1{
+  font-size: 60px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-page span{
+  /* font-size: 60px; */
+/*  color: #db4437;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #db4437;
+  border-radius: 4px;
+  color: #db4437;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.google-button:hover {
+  background-color: #db4437;
+  color: #fff;
+} */
+
+.landing-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  color: rgba(255, 255, 255, 0.08);
+  font-weight: bold;
+  z-index: -1;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 90px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.content span {
+  /* font-size: 60px; */
+  color: #db4437;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #db4437;
+  border-radius: 4px;
+  color: #db4437;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: auto;
+}
+
+.google-button:hover {
+  background-color: #db4437;
+  color: #fff;
 }

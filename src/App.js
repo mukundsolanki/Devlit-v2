@@ -1,11 +1,11 @@
 import './App.css';
-import SignIn from './components/SignIn';
+import FirebaseAuthCheck from './components/FirebaseAuthCheck';
 
 function App() {
 
   return (
     <div className="App">
-      <SignIn/>
+      <FirebaseAuthCheck/>
     </div>
   );
 }
