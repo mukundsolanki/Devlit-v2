@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "./config";
 
 function Header() {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -12,10 +14,10 @@ function Header() {
     return () => unsubscribe();
   }, []);
 
-  const logout =()=>{
-    localStorage.clear()
-    window.location.reload()
-}
+  const logout = () => {
+    localStorage.clear();
+    navigate("/"); // Navigate to the signin page
+  };
 
   return (
     <div className="header">
