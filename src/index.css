@@ -1,15 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
 }
 
 body {
@@ -53,9 +50,6 @@ body {
 }
 
 .google-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #fff;
   border: 2px solid #db4437;
   border-radius: 4px;
@@ -67,6 +61,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: auto;
+  text-decoration: none;
 }
 
 .google-button:hover {
@@ -80,18 +75,16 @@ body {
   justify-content: space-between;
   background-color: #000000;
   padding: 10px;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  /* flex-grow: 1; */
 }
 
 .header-link{
   color: #db4437;
   text-decoration: none;
-}
-
-.app-name {
-  font-size: 45px;
-  font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
+  margin-left: 20px;
 }
 
 .user-profile {
@@ -108,32 +101,19 @@ body {
   margin-right: 5px;
 }
 
-.username {
-  font-size: 35px;
-}
-
-.home-state{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-
 .home-state h2{
   display: inline-block;
   margin: 10px;
   text-decoration: none;
 }
 
-.home-state span{
+span{
   color: #db4437;
 }
 
 .profile-picture-home{
   height: 100px;
   border-radius: 50%;
-
 }
 
 .center {
@@ -141,6 +121,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
   height: 80vh;
 }
 
@@ -186,16 +167,13 @@ body {
   padding: 10px;
 }
 
-.run-button {
-  margin-bottom: 10px;
-}
-
 .code-editor__output iframe {
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 5px;
   background-color: #fff;
+  margin-top: 10px;
 }
 
 .about-center{
@@ -209,16 +187,16 @@ body {
 
 .about-heading {
   font-size: 32px;
-  color: white;
+  color: #db4437;
 }
 
 .about-description {
   color: white;
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .github-link {
-  display: inline-block;
   background-color: #fff;
   border: 2px solid #db4437;
   border-radius: 4px;
@@ -229,9 +207,19 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .github-link:hover {
   color: white;
   background-color: #db4437;
+}
+
+.footer {
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
