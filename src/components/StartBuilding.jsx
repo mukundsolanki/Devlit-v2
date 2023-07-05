@@ -1,4 +1,8 @@
-import React, { useState } from 'react'; import Header from './Header'
+import React, { useState } from 'react';
+import Header from './Header'
+import MonacoEditor from 'react-monaco-editor';
+import Footer from './Footer';
+
 export default function StartBuilding() {
 
   const [htmlCode, setHtmlCode] = useState('');
@@ -6,8 +10,8 @@ export default function StartBuilding() {
   const [jsCode, setJsCode] = useState('');
   const [output, setOutput] = useState('');
 
-  const handleCodeChange = (event, codeType) => {
-    const code = event.target.value;
+  const handleCodeChange = (code, codeType) => {
+    // const code = event.target.value;
     switch (codeType) {
       case 'html':
         setHtmlCode(code);
@@ -49,32 +53,39 @@ export default function StartBuilding() {
       <div className="code-editor">
         <div className="code-editor__input">
           <label htmlFor="">HTML</label>
-          <textarea
+          <MonacoEditor
+            language="html"
+            theme="vs-dark"
             value={htmlCode}
-            onChange={(event) => handleCodeChange(event, 'html')}
-            placeholder="Enter HTML code"
-          ></textarea>
+            onChange={(code) => handleCodeChange(code, 'html')}
+            options={{ fontSize: 14 }} // You can customize the editor options here
+          />
 
           <label htmlFor="">CSS</label>
-          <textarea
+          <MonacoEditor
+            language="css"
+            theme="vs-dark"
             value={cssCode}
-            onChange={(event) => handleCodeChange(event, 'css')}
-            placeholder="Enter CSS code"
-          ></textarea>
-
-          <label htmlFor="">JS</label>
-          <textarea
+            onChange={(code) => handleCodeChange(code, 'css')}
+            options={{ fontSize: 14 }}
+          />
+          <label htmlFor="">JAVASCRIPT</label>
+          <MonacoEditor
+            language="javascript"
+            theme="vs-dark"
             value={jsCode}
-            onChange={(event) => handleCodeChange(event, 'js')}
-            placeholder="Enter JavaScript code"
-          ></textarea>
+            onChange={(code) => handleCodeChange(code, 'js')}
+            options={{ fontSize: 14 }}
+          />
         </div>
 
         <div className="code-editor__output">
-        <button onClick={handleRunCode} className="run-button google-button">Run</button>
+          <button onClick={handleRunCode} className="run-button google-button">Run</button>
           <iframe id="output-iframe" title="Output"></iframe>
         </div>
       </div>
+
+      <Footer/>
     </div>
   )
 }
