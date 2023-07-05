@@ -15,8 +15,11 @@ function Header() {
   }, []);
 
   const logout = () => {
-    localStorage.clear();
-    navigate("/"); // Navigate to the signin page
+    auth.signOut().then(() => {
+      localStorage.clear();
+      navigate("/");
+      window.location.reload();
+    });
   };
 
   return (

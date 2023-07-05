@@ -28,6 +28,7 @@ function Home() {
             <div className="home-state center">
                 {user ? (
                     <>
+                    <div className="background-text">DEVL!T</div>
                         <img src={user.photoURL} alt="Profile" className="profile-picture-home" />
                         <h1>👋Hi, <span>{user.displayName}</span></h1>
                         {/* <h2>{user.email}</h2> */}
@@ -35,7 +36,7 @@ function Home() {
                 ) : (
                     <>
                         <h2>Hi, Guest</h2>
-                        <p>Please sign in to view your profile.</p>
+                        <p>Please sign in to continue</p>
                     </>
                 )}
                 <div>
