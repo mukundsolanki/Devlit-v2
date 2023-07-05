@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { auth } from "./config";
+import Footer from "./Footer";
 
 function Home() {
 
@@ -46,11 +47,9 @@ function Home() {
                     <h2>
                         <Link to="/about" className="google-button">About</Link>
                     </h2>
-                    <h2>
-                        <Link to="/profile" className="google-button">Profile</Link>
-                    </h2>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
