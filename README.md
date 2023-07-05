@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# DevLit🔥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DevLit is a web-based Code Editor built with React. It allows users to write and run HTML, CSS, and JavaScript code in real-time, providing a live output preview. Users can sign in with their Google accounts using Firebase Authentication.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Real-time Editing:** Write code in the browser and see the changes instantly.
+- **HTML, CSS, and JavaScript Support:** DevLit supports all three major web technologies.
+- **Live Output Preview:** Get immediate feedback on your code by viewing the output within the Browser.
+- **User-Friendly Interface:** The interface is designed to be intuitive and easy to use.
+- **Firebase Authentication:** Sign in to DevLit with your Google account for a personalized experience.
 
-### `npm start`
+## Live: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://devlit.vercel.app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To use DevLit locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: `git clone https://github.com/mukundsolanki/Devlit-v2.git`
+2. Navigate to the project directory: `cd Devlit-v2`
+3. Install the dependencies: `npm install`
+4. Set up a Firebase project:
+   - Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+   - Enable the "Google" sign-in provider in the Authentication section.
+   - Copy your Firebase project's configuration (Web App) credentials.
+5. Create a `.env` file in the root directory and add your Firebase credentials as environment variables:
+    ```
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
+    ```
 
-### `npm run build`
+6. Start the development server: `npm start`
+7. Open your browser and visit `http://localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Once the development server is running, you can access the DevLit in your browser.
+2. Click the "Sign in with Google" button to authenticate with your Google account via Firebase.
+3. Write your HTML, CSS, and JavaScript code in the provided editor panes.
+4. As you make changes, the output preview will update automatically.
+5. Experiment with different code snippets and see the results in real-time.
+7. Sign out when you're done by clicking the "Log out" button.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue on the GitHub repository. You can also fork the project and submit a pull request with your improvements.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. You can find the details in the [LICENSE](LICENSE) file.
