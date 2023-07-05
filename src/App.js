@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css';
 import FirebaseAuthCheck from './components/FirebaseAuthCheck';
 import StartBuilding from "./components/StartBuilding";
 import About from "./components/About";
 import Profile from "./components/Profile";
-
 
 function App() {
 

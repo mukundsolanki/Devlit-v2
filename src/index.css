@@ -11,3 +11,227 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: black;
+  color: #fff;
+}
+
+.landing-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 280px;
+  color: rgba(255, 255, 255, 0.08);
+  font-weight: bold;
+  z-index: -1;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 90px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.content span {
+  color: #db4437;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #db4437;
+  border-radius: 4px;
+  color: #db4437;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: auto;
+}
+
+.google-button:hover {
+  background-color: #db4437;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.header-link{
+  color: #db4437;
+  text-decoration: none;
+}
+
+.app-name {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.user-profile {
+  display: flex;
+  position: absolute;
+  right: 20px;
+}
+
+.profile-picture {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.username {
+  font-size: 35px;
+}
+
+.home-state{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.home-state h2{
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.home-state span{
+  color: #db4437;
+}
+
+.profile-picture-home{
+  height: 100px;
+  border-radius: 50%;
+
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.code-editor {
+  display: flex;
+  height: 100vh;
+  margin-top: 30px;
+}
+
+.code-editor__input {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(5, 5, 5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.code-editor__input label {
+  margin-bottom: 5px;
+  color: #db4437;
+  text-align: center;
+}
+
+.code-editor__input textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.code-editor__output {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.run-button {
+  margin-bottom: 10px;
+}
+
+.code-editor__output iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.about-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 80vh;
+}
+
+.about-heading {
+  font-size: 32px;
+  color: white;
+}
+
+.about-description {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.github-link {
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #db4437;
+  border-radius: 4px;
+  color: #db4437;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.github-link:hover {
+  color: white;
+  background-color: #db4437;
+}
