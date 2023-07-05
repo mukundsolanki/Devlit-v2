@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./config";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [user, setUser] = useState(null);
@@ -24,7 +25,9 @@ function Header() {
 
   return (
     <div className="header">
-      <div className="app-name">DEVLIT</div>
+      <div className="app-name">
+        <Link to="/" className="header-link">DEVLIT</Link>
+      </div>
       {user && (
         <div className="user-profile">
           <img
