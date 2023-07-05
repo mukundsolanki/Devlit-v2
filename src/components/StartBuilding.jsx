@@ -8,7 +8,7 @@ export default function StartBuilding() {
   const [htmlCode, setHtmlCode] = useState('');
   const [cssCode, setCssCode] = useState('');
   const [jsCode, setJsCode] = useState('');
-  const [output, setOutput] = useState('');
+  // const [output, setOutput] = useState('');
 
   const handleCodeChange = (code, codeType) => {
     // const code = event.target.value;
