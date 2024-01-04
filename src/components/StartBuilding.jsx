@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React from "react";
+import { useEffect, useState } from "react";
 import Header from './Header'
 import MonacoEditor from 'react-monaco-editor';
 import Footer from './Footer';
+import { auth } from "./config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from '../components/config';
+import { Link } from "react-router-dom";
 
 export default function StartBuilding() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const [htmlCode, setHtmlCode] = useState('');
   const [cssCode, setCssCode] = useState('');
@@ -45,6 +66,23 @@ export default function StartBuilding() {
     iframe.contentDocument.close();
   };
 
+  const saveToFirebase = async (e) => {
+    e.preventDefault();
+
+    try {
+      const docRef = await addDoc(collection(db, "codes"), {
+        userId: user.uid,
+        htmlCode: htmlCode,
+        cssCode: cssCode,
+        jsCode: jsCode,
+        timestamp: serverTimestamp(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+
   return (
 
     <div>
@@ -81,11 +119,19 @@ export default function StartBuilding() {
 
         <div className="code-editor__output">
           <button onClick={handleRunCode} className="run-button google-button">Run</button>
+
+          {
+            user ? <button onClick={saveToFirebase} className="run-button google-button">Save</button>
+              : <Link to="/">
+                <button className="run-button google-button">Sign in to Save</button>
+              </Link>
+          }
+
           <iframe id="output-iframe" title="Output"></iframe>
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   )
 }
