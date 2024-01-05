@@ -7,6 +7,7 @@ import { auth } from "./config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '../components/config';
 import { Link } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function StartBuilding() {
 
@@ -64,6 +65,8 @@ export default function StartBuilding() {
     iframe.contentDocument.open();
     iframe.contentDocument.write(iframeContent);
     iframe.contentDocument.close();
+
+    toast.success('Compiled Successfully!')
   };
 
   const saveToFirebase = async (e) => {
@@ -77,17 +80,17 @@ export default function StartBuilding() {
         jsCode: jsCode,
         timestamp: serverTimestamp(),
       });
-      console.log("Document written with ID: ", docRef.id);
+      toast.success('Successfully Saved!')
+      // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
 
   return (
-
     <div>
+      <div><Toaster /></div>
       <Header />
-
       <div className="code-editor">
         <div className="code-editor__input">
           <label htmlFor="">HTML</label>
@@ -98,7 +101,6 @@ export default function StartBuilding() {
             onChange={(code) => handleCodeChange(code, 'html')}
             options={{ fontSize: 14 }} // You can customize the editor options here
           />
-
           <label htmlFor="">CSS</label>
           <MonacoEditor
             language="css"
@@ -116,21 +118,17 @@ export default function StartBuilding() {
             options={{ fontSize: 14 }}
           />
         </div>
-
         <div className="code-editor__output">
           <button onClick={handleRunCode} className="run-button google-button">Run</button>
-
           {
             user ? <button onClick={saveToFirebase} className="run-button google-button">Save</button>
               : <Link to="/">
                 <button className="run-button google-button">Sign in to Save</button>
               </Link>
           }
-
           <iframe id="output-iframe" title="Output"></iframe>
         </div>
       </div>
-
       <Footer />
     </div>
   )
